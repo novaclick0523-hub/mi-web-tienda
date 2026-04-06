@@ -1,196 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>NovaClick</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOVACLICK - Tecnología Corporativa</title>
+    <title>NovaClick | Tienda Tecnológica</title>
+    <style>
+        /* --- AQUÍ PEGUÉ TU CSS --- */
+        :root {
+            --color-wa: #25d366; 
+            --color-oscuro: #1a1a1a; 
+            --color-azul-corpo: #0288d1; 
+            --bg-gris: #f4f7f6;
+            --texto-suave: #666;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-gris);
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header-principal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px 30px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .logo-contenedor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            color: var(--color-oscuro);
+            letter-spacing: -2px;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .icono-monitor { font-size: 3.5rem; }
+
+        .seccion-destacada {
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .tarjeta-anuncio {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 0 auto;
+            max-width: 650px;
+            border-top: 6px solid var(--color-wa);
+        }
+
+        .btn-ws-principal {
+            background-color: var(--color-wa);
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .btn-ws-principal:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+
+        .contenedor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 100px;
+        }
+
+        .tarjeta-producto {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tarjeta-producto:hover { transform: translateY(-10px); }
+
+        .imagen-wrapper {
+            width: 100%;
+            height: 220px;
+            padding: 15px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imagen-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cuerpo-producto { 
+            padding: 20px; 
+            flex-grow: 1; 
+            display: flex; 
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .badge-corpo {
+            background: #e1f5fe;
+            color: var(--color-azul-corpo);
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 6px;
+            align-self: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .precio { font-size: 1.5rem; font-weight: 800; color: var(--color-oscuro); margin: 15px 0; }
+
+        .btn-comprar {
+            background: var(--color-oscuro);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: auto;
+            transition: 0.3s;
+        }
+
+        .btn-wa-flotante {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--color-wa);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .btn-wa-flotante img { width: 35px; filter: brightness(0) invert(1); }
+
+        .footer {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .contenedor-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 15px; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
     <header class="header-principal">
         <div class="logo-contenedor">
-            <span class="icono-monitor">🖥️</span> 
+            <span class="icono-monitor">🖥️</span>
             <h1>NOVACLICK</h1>
         </div>
     </header>
 
-    <section class="seccion-destacada">
-        <div class="tarjeta-anuncio">
-            <h2>✨ Artículos Nuevos</h2>
-            <p>¿Buscas algo específico? Pregúntanos por la referencia o envíanos una foto.</p>
-            <a href="https://wa.me/573215804611?text=Hola%20NOVACLICK,%20busco%20información%20sobre%20artículos%20nuevos" class="btn btn-ws-principal" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                Consultar Disponibilidad
-            </a>
-        </div>
-    </section>
+    <main>
+        <section class="seccion-destacada">
+            <div class="tarjeta-anuncio">
+                <h2>Catálogo de Equipos Corporativos 🚀</h2>
+                <p>Calidad garantizada para tu oficina o el hogar.</p>
+                <a href="https://wa.me/573215884611" class="btn-ws-principal" target="_blank">
+                    Escríbenos por WhatsApp
+                </a>
+            </div>
+        </section>
 
-    <hr class="divisor-elegante"> 
+        <h2 style="text-align: center;">Nuestras Ofertas</h2>
         
-    <h2 class="titulo-galeria">📦 Artículos Usados (Garantizados)</h2>
+        <div class="contenedor-grid">
+            <div class="tarjeta-producto">
+                <div class="imagen-wrapper">
+                    <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400" alt="Producto">
+                </div>
+                <div class="cuerpo-producto">
+                    <span class="badge-corpo">🇺🇸 DISPONIBLE</span>
+                    <h3>Pantalla Lenovo 22"</h3>
+                    <p class="detalles">FHD / Estética Corporativa</p>
+                    <p class="precio">$320.000</p>
+                    <a href="https://wa.me/573215884611?text=Me%20interesa%20la%20Pantalla%20Lenovo" class="btn-comprar" target="_blank">Comprar 🛒</a>
+                </div>
+            </div>
 
-   <div class="contenedor-grid">
-    
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=400" alt="Lenovo ThinkPad X1">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Lenovo ThinkPad X1</h3>
-            <p class="detalles">Core i5 10ma Gen / 8GB RAM / SSD</p>
-            <p class="precio">$1.200.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20la%20Lenovo%20ThinkPad%20X1" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
+            <div class="tarjeta-producto">
+                <div class="imagen-wrapper">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" alt="Producto">
+                </div>
+                <div class="cuerpo-producto">
+                    <span class="badge-corpo">🇺🇸 DISPONIBLE</span>
+                    <h3>Laptop HP EliteBook</h3>
+                    <p class="detalles">Ryzen 5 / 16GB RAM / 512 SSD</p>
+                    <p class="precio">$1.850.000</p>
+                    <a href="https://wa.me/573215884611?text=Me%20interesa%20la%20Laptop%20HP" class="btn-comprar" target="_blank">Comprar 🛒</a>
+                </div>
+            </div>
+            
+            </div> 
+    </main>
 
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://images.unsplash.com/photo-1586210579191-33b45e38fa2c?auto=format&fit=crop&w=400" alt="Monitor Dell 24">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Monitor Dell 24"</h3>
-            <p class="detalles">Full HD / Color preciso</p>
-            <p class="precio">$350.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20el%20Monitor%20Dell%2024" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
+    <a href="https://wa.me/573215884611" class="btn-wa-flotante" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=500" alt="Smartphone">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Smartphone</h3>
-            <p class="detalles">8GB RAM / 256GB Disco</p>
-            <p class="precio">$Precio_Aquí</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20el%20Celular%20de%20256GB" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
+    <footer class="footer">
+        <p>&copy; 2026 NovaClick | Equipos de Computo</p>
+    </footer>
 
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=500" alt="Portátil HP">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Portátil HP</h3>
-            <p class="detalles">8GB RAM / 256GB Disco</p>
-            <p class="precio">$800.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20el%20Portatil%20HP%20de%20800mil" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
-
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=400" alt="Teclado Mecánico">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Teclado Mecánico</h3>
-            <p class="detalles">Luces RGB / Switch Blue</p>
-            <p class="precio">$150.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20el%20Teclado%20Mecánico" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
-
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=400" alt="Torre HP Business">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Torre HP Business</h3>
-            <p class="detalles">Intel / 8GB RAM / Ideal Oficinas</p>
-            <p class="precio">$650.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20la%20Torre%20HP%20Business" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
-
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=400" alt="Pantalla Lenovo 22">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Pantalla Lenovo 22"</h3>
-            <p class="detalles">FHD / Estética Corporativa</p>
-            <p class="precio">$320.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20la%20Pantalla%20Lenovo%2022" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
-
-    <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://i.supaimg.com/525b4841-f3ae-436d-886a-865f57758790/51083089-0492-4e18-b56f-f50da7d88b7e.jpg" alt="Torre Lenovo ThinkCentre">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Torre ThinkCentre</h3>
-            <p class="detalles">Core i5 / 8GB RAM / Silenciosa</p>
-            <p class="precio">$700.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20la%20Torre%20Lenovo%20ThinkCentre" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-    </div>
-     
-      <div class="tarjeta-producto">
-        <div class="imagen-wrapper">
-            <img src="https://i.supaimg.com/525b4841-f3ae-436d-886a-865f57758790/51083089-0492-4e18-b56f-f50da7d88b7e.jpg" alt="Torre Lenovo ThinkCentre">
-        </div>
-        <div class="cuerpo-producto">
-            <span class="badge-corpo">💼 CORPORATIVO</span>
-            <h3>Torre dell</h3>
-            <p class="detalles">Core i5 / 8GB RAM / Silenciosa</p>
-            <p class="precio">$900.000</p>
-            <a href="https://wa.me/573215804611?text=Me%20interesa%20la%20Torre%20Lenovo%20ThinkCentre" class="btn btn-comprar" target="_blank">Comprar 🛒</a>
-        </div>
-
-        
-       </div>
-   </div>
-    
-        
-        
-       <!-- ESPACIADOR - Separa el producto del footer -->
-<div style="height: 80px;"></div>
-
-<!-- PIE DE PÁGINA CENTRADO -->
-<footer style="margin-top: 0; padding: 2rem 1rem; background: #f9f9f9; text-align: center; font-family: Arial, sans-serif; border-top: 2px solid #e0e0e0; width: 100%; display: block;">
-    
-    <!-- Línea decorativa centrada -->
-    <div style="width: 50px; height: 2px; background: #ccc; margin: 0 auto 1.5rem auto;"></div>
-    
-    <!-- Texto centrado -->
-    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.85rem; color: #555;">
-            © 2024 <strong>Tu Empresa</strong> | Todos los derechos reservados
-        </p>
-        
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.8rem; color: #777;">
-            <a href="#" style="color: #777; text-decoration: none; margin: 0 0.5rem;">Aviso Legal</a> | 
-            <a href="#" style="color: #777; text-decoration: none; margin: 0 0.5rem;">Privacidad</a> | 
-            <a href="#" style="color: #777; text-decoration: none; margin: 0 0.5rem;">Cookies</a>
-        </p>
-        
-        <p style="margin: 0; font-size: 0.75rem; color: #999;">
-            Información profesional sujeta a cambios. Verificar especificaciones técnicas.
-        </p>
-    </div>
-</footer>
-    
-  </body>
-  
+</body>
 </html>
